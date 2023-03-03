@@ -214,7 +214,7 @@ local Option = Instance.new("Frame", FirstGUI2)
 Option.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
 Option.BackgroundColor3 = Color3.fromRGB(0,0,0)
 Option.Position = UDim2.new(0, 0, 0, 34*ClientY)
-Option.Visible = true
+Option.Visible = false
 
 A = Instance.new("UICorner", Option)
 

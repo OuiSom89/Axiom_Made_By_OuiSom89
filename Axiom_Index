@@ -1,0 +1,1857 @@
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/OuiSom89/New-file-funciton/main/New-file-funciton.lua"))()
+
+if lib.IsConfig("Axiom_Script") == false then
+
+    local _ConfigScript = {
+        AnimationBolean = true;
+        hotkeyhide = "j"
+    }
+
+    lib.WriteConfig("Axiom_Script", _ConfigScript)
+end
+
+if lib.IsConfig("Axiom_Script_CMD") == false then
+
+    local _ConfigCMD = {
+
+    }
+
+    lib.WriteConfig("Axiom_Script_CMD", _ConfigCMD)
+end
+
+local _ConfigScript = lib.ReadConfig("Axiom_Script")
+local _ConfigCMD = lib.ReadConfig("Axiom_Script_CMD")
+
+---------------------------------------------------------------------------
+
+local pp = true
+local p = false
+local OptionNewInstanceCloneBoeleanbisbis = false
+local FlyBolean = false
+
+local AllMessageConsol = 0
+
+local OuiSomScreenGui = {
+    x = 1920;
+    y = 981
+}
+
+local ScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+local OuiSomScreenGui2 = {
+    x = game:GetService("CoreGui").ScreenGui.AbsoluteSize.x;
+    y = game:GetService("CoreGui").ScreenGui.AbsoluteSize.y
+}
+
+ClientX = OuiSomScreenGui2.x/OuiSomScreenGui.x
+ClientY = OuiSomScreenGui2.y/OuiSomScreenGui.y
+
+---------------------------------------------------------------------------
+
+local FirstGUI = Instance.new("Frame", ScreenGui)
+FirstGUI.Size = UDim2.new(0, 0*ClientX, 0, 380*ClientY)
+FirstGUI.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+FirstGUI.Position = UDim2.new(0.5, -520/2*ClientX, 0.5, -380/2*ClientY)
+FirstGUI.BorderSizePixel = 0
+FirstGUI.Active = true
+FirstGUI.Draggable = true
+FirstGUI.Visible = true
+
+local A = Instance.new("UICorner", FirstGUI)
+
+local FirstGUI2 = Instance.new("Frame", FirstGUI)
+FirstGUI2.Size = UDim2.new(0, 544*ClientX, 0, 0*ClientY)
+FirstGUI2.BackgroundColor3 = Color3.fromRGB(0,0,0)
+FirstGUI2.Position = UDim2.new(0.5, -544/2*ClientX, 0.5, -374/2*ClientY)
+FirstGUI2.BorderSizePixel = 0
+
+A:Clone().Parent = FirstGUI2
+
+local FirstGUI3 = Instance.new("Frame", FirstGUI2)
+FirstGUI3.Size = UDim2.new(0, 544*ClientX, 0, 3*ClientY)
+FirstGUI3.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+FirstGUI3.Position = UDim2.new(0.5, -544/2*ClientX, 0, 30*ClientX)
+FirstGUI3.BorderSizePixel = 0
+FirstGUI3.Transparency = 1
+
+local MenuButton = Instance.new("ImageLabel", FirstGUI2)
+MenuButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MenuButton.BorderSizePixel = 0
+MenuButton.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+MenuButton.Size = UDim2.new(0, 28*ClientX, 0, 28*ClientY)
+MenuButton.Image = 'rbxassetid://10768139127'
+MenuButton.Transparency = 1
+MenuButton.ImageTransparency = 1
+
+local Titre = Instance.new("TextLabel", FirstGUI2)
+Titre.Text = 'A X I O M    R O B L O X    H U B'
+Titre.BorderSizePixel = 0
+Titre.Position = UDim2.new(0.5, 0, 0, 2*ClientY)
+Titre.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Titre.Size = UDim2.new(0, 0, 0, 25*ClientY)
+Titre.Font = Enum.Font.GothamBold
+Titre.TextColor3 = Color3.fromRGB(255, 255, 255)
+Titre.TextSize = 40.000*(ClientY*ClientX/2)
+Titre.Transparency = 1
+
+--[[-----------------------------------------------]]--
+--[[   ___    ___    ______    __    _    _    _   ]]--
+--[[  |   \  /   |  |  ____|  |  \  | |  | |  | |  ]]--
+--[[  | |\ \/ /| |  | |__     |   \ | |  | |  | |  ]]--
+--[[  | | \__/ | |  |  __|    | |\ \| |  | |  | |  ]]--
+--[[  | |      | |  | |____   | | \   |  | \__/ |  ]]--
+--[[  |_|      |_|  |______|  |_|  \__|  \______/  ]]--
+--[[                                               ]]--
+--[[-----------------------------------------------]]--
+local Home = Instance.new("Frame", FirstGUI2)
+Home.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
+Home.BackgroundColor3 = Color3.fromRGB(0,0,0)
+Home.Position = UDim2.new(0, 0, 0, 34*ClientY)
+Home.Visible = false
+
+A:Clone().Parent = Home
+
+local ContourUser = Instance.new("Frame", Home)
+ContourUser.Size = UDim2.new(0, 100*ClientX, 0, 100*ClientY)
+ContourUser.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+ContourUser.Position = UDim2.new(0, 20*ClientX, 0, 20 *ClientY)
+
+local AA = Instance.new("UICorner", ContourUser)
+AA.CornerRadius = UDim.new(0.99)
+
+local Url = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, Enum.ThumbnailType.AvatarBust, Enum.ThumbnailSize.Size420x420)
+
+local UserImage = Instance.new("ImageLabel", ContourUser)
+UserImage.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+UserImage.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+UserImage.Size = UDim2.new(0, 96*ClientX, 0, 96*ClientY)
+UserImage.Image = Url
+
+local TextBienvenu = Instance.new("TextLabel", Home)
+TextBienvenu.Text = 'Hello, '..game:GetService("Players").LocalPlayer.Name..'\n\n'..'if you need help, join discord for support'
+TextBienvenu.Position = UDim2.new(0,140*ClientX,0,50*ClientY)
+TextBienvenu.Font = Enum.Font.GothamBold
+TextBienvenu.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBienvenu.TextSize = 40.000*ClientY*ClientX/2
+TextBienvenu.TextXAlignment = Enum.TextXAlignment.Left
+TextBienvenu.BorderSizePixel = 0
+
+A = Instance.new("UICorner", UserImage)
+A.CornerRadius = UDim.new(0.99)
+
+local Key = Instance.new("Frame", FirstGUI2)
+Key.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
+Key.BackgroundColor3 = Color3.fromRGB(255,255,0)
+Key.Position = UDim2.new(0, 0, 0, 34*ClientY)
+Key.Visible = false
+
+local Script = Instance.new("Frame", FirstGUI2)
+Script.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
+Script.BackgroundColor3 = Color3.fromRGB(0,255,0)
+Script.Position = UDim2.new(0, 0, 0, 34*ClientY)
+Script.Visible = false
+
+local CMD = Instance.new("Frame", FirstGUI2)
+CMD.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
+CMD.BackgroundColor3 = Color3.fromRGB(0,0,0)
+CMD.Position = UDim2.new(0, 0, 0, 34*ClientY)
+CMD.Visible = false
+
+A = Instance.new("UICorner", CMD)
+
+local CMDBarre = Instance.new("Frame", CMD)
+CMDBarre.Size = UDim2.new(0, 544*ClientX, 0, 3*ClientY)
+CMDBarre.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+CMDBarre.Position = UDim2.new(0, 0, 0, 297*ClientY)
+CMDBarre.BorderSizePixel = 0
+
+local CMDIndication = Instance.new("TextLabel", CMD)
+CMDIndication.BorderSizePixel = 0
+CMDIndication.Position = UDim2.new(0, 0, 0, 300*ClientY)
+CMDIndication.BackgroundColor3 = Color3.fromRGB(0,0,0)
+CMDIndication.Size = UDim2.new(0, 544*ClientX, 0, 40*ClientY)
+CMDIndication.Font = Enum.Font.GothamBold
+CMDIndication.Text = " Command -->"
+CMDIndication.TextColor3 = Color3.fromRGB(255, 255, 255)
+CMDIndication.TextSize = 40.000*(ClientY*ClientX/2)
+CMDIndication.TextXAlignment = Enum.TextXAlignment.Left
+
+A:Clone().Parent = CMDIndication
+
+local CMDInsert = Instance.new("TextBox", CMD)
+CMDInsert.BorderSizePixel = 0
+CMDInsert.Position = UDim2.new(0, 140*ClientX, 0, 310*ClientY)
+CMDInsert.BackgroundColor3 = Color3.fromRGB(0,0,0)
+CMDInsert.Size = UDim2.new(0, 403*ClientX, 0, 20*ClientY)
+CMDInsert.Font = Enum.Font.GothamBold
+CMDInsert.Text = ""
+CMDInsert.TextColor3 = Color3.fromRGB(255, 255, 255)
+CMDInsert.TextXAlignment = Enum.TextXAlignment.Left
+CMDInsert.TextScaled = true
+CMDInsert.TextSize = 40.000*(ClientY*ClientX/2)
+
+A:Clone().Parent = CMDInsert
+
+local CMDScrollingFrame = Instance.new('ScrollingFrame', CMD)
+CMDScrollingFrame.Size = UDim2.new(0, 544*ClientX, 0, 297*ClientY)
+CMDScrollingFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
+CMDScrollingFrame.ScrollBarThickness = 0
+CMDScrollingFrame.CanvasSize = UDim2.new(0, 544*ClientX, 0, 20*(AllMessageConsol+1)*ClientY)
+CMDScrollingFrame.BorderColor3 = Color3.fromRGB(0,0,0)
+CMDScrollingFrame.BorderSizePixel = 0
+
+local CMDConsoleMessage = Instance.new("TextLabel", CMDScrollingFrame)
+CMDConsoleMessage.BorderSizePixel = 0
+CMDConsoleMessage.Position = UDim2.new(0, 0, 0, 20*AllMessageConsol*ClientY)
+CMDConsoleMessage.BackgroundColor3 = Color3.fromRGB(0,0,0)
+CMDConsoleMessage.Size = UDim2.new(0, 544*ClientX, 0, 20*ClientY)
+CMDConsoleMessage.Font = Enum.Font.GothamBold
+CMDConsoleMessage.Text = "  [ CMD ] written \"Help\" for help"
+CMDConsoleMessage.TextScaled = true
+CMDConsoleMessage.TextColor3 = Color3.fromRGB(255, 255, 255)
+CMDConsoleMessage.TextXAlignment = Enum.TextXAlignment.Left
+
+local Option = Instance.new("Frame", FirstGUI2)
+Option.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
+Option.BackgroundColor3 = Color3.fromRGB(0,0,0)
+Option.Position = UDim2.new(0, 0, 0, 34*ClientY)
+Option.Visible = true
+
+A = Instance.new("UICorner", Option)
+
+local OptionColor = Instance.new("Frame", Option)
+OptionColor.Size = UDim2.new(0, 239*ClientX, 0, 140*ClientY)
+OptionColor.Position = UDim2.new(0, 20*ClientX, 0, 20*ClientY)
+OptionColor.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+
+A:Clone().Parent = OptionColor
+
+local OptionColor2 = Instance.new("Frame", OptionColor)
+OptionColor2.Size = UDim2.new(0, 235*ClientX, 0, 136*ClientY)
+OptionColor2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+OptionColor2.BackgroundColor3 = Color3.fromRGB(0,0,0)
+
+A:Clone().Parent = OptionColor2
+
+-- option categori 1
+local OptionColorScrollingFrame = Instance.new('ScrollingFrame', OptionColor2)
+OptionColorScrollingFrame.Size = UDim2.new(0, 225*ClientX, 0, 126*ClientY)
+OptionColorScrollingFrame.Position = UDim2.new(0, 5*ClientX, 0, 5*ClientY)
+OptionColorScrollingFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
+OptionColorScrollingFrame.ScrollBarThickness = 5
+OptionColorScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 300*ClientY)
+OptionColorScrollingFrame.BorderColor3 = Color3.fromRGB(0,0,0)
+
+local OptionColorName = Instance.new("TextLabel", OptionColorScrollingFrame)
+OptionColorName.Text = 'Color theme'
+OptionColorName.Size = UDim2.new(0, 215*ClientX, 0, 30*ClientY)
+OptionColorName.Font = Enum.Font.GothamBold
+OptionColorName.TextColor3 = Color3.fromRGB(255, 255, 255)
+OptionColorName.TextSize = 40.000*ClientY*ClientX/2
+OptionColorName.BorderSizePixel = 0
+OptionColorName.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
+
+A:Clone().Parent = OptionColorName
+
+local OptionColorThemeNoir = Instance.new("Frame", OptionColorScrollingFrame)
+OptionColorThemeNoir.Size = UDim2.new(0, 215*ClientX, 0, 30*ClientY)
+OptionColorThemeNoir.Position = UDim2.new(0,0,0,35*ClientY)
+OptionColorThemeNoir.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
+
+A:Clone().Parent = OptionColorThemeNoir
+
+local OptionColorThemeNoir2 = Instance.new("TextButton", OptionColorThemeNoir)
+OptionColorThemeNoir2.Size = UDim2.new(0, 209*ClientX, 0, 24*ClientY)
+OptionColorThemeNoir2.Position = UDim2.new(0,3*ClientX,0,3*ClientY)
+OptionColorThemeNoir2.BackgroundColor3 = Color3.fromRGB(0,0,0)
+OptionColorThemeNoir2.Text = ''
+
+A:Clone().Parent = OptionColorThemeNoir2
+
+local OptionColorThemeBleu = Instance.new("Frame", OptionColorScrollingFrame)
+OptionColorThemeBleu.Size = UDim2.new(0, 215*ClientX, 0, 30*ClientY)
+OptionColorThemeBleu.Position = UDim2.new(0,0,0,70*ClientY)
+OptionColorThemeBleu.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
+
+A:Clone().Parent = OptionColorThemeBleu
+
+local OptionColorThemeBleu2 = Instance.new("TextButton", OptionColorThemeBleu)
+OptionColorThemeBleu2.Size = UDim2.new(0, 209*ClientX, 0, 24*ClientY)
+OptionColorThemeBleu2.Position = UDim2.new(0,3*ClientX,0,3*ClientY)
+OptionColorThemeBleu2.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+OptionColorThemeBleu2.Text = ''
+
+A:Clone().Parent = OptionColorThemeBleu2
+
+local OptionColorThemeRouge = Instance.new("Frame", OptionColorScrollingFrame)
+OptionColorThemeRouge.Size = UDim2.new(0, 215*ClientX, 0, 30*ClientY)
+OptionColorThemeRouge.Position = UDim2.new(0,0,0,105*ClientY)
+OptionColorThemeRouge.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
+
+A:Clone().Parent = OptionColorThemeRouge
+
+local OptionColorThemeRouge2 = Instance.new("TextButton", OptionColorThemeRouge)
+OptionColorThemeRouge2.Size = UDim2.new(0, 209*ClientX, 0, 24*ClientY)
+OptionColorThemeRouge2.Position = UDim2.new(0,3*ClientX,0,3*ClientY)
+OptionColorThemeRouge2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+OptionColorThemeRouge2.Text = ''
+
+A:Clone().Parent = OptionColorThemeRouge2
+
+local OptionColorThemeVert = Instance.new("Frame", OptionColorScrollingFrame)
+OptionColorThemeVert.Size = UDim2.new(0, 215*ClientX, 0, 30*ClientY)
+OptionColorThemeVert.Position = UDim2.new(0,0,0,140*ClientY)
+OptionColorThemeVert.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
+
+A:Clone().Parent = OptionColorThemeVert
+
+local OptionColorThemeVert2 = Instance.new("TextButton", OptionColorThemeVert)
+OptionColorThemeVert2.Size = UDim2.new(0, 209*ClientX, 0, 24*ClientY)
+OptionColorThemeVert2.Position = UDim2.new(0,3*ClientX,0,3*ClientY)
+OptionColorThemeVert2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+OptionColorThemeVert2.Text = ''
+
+A:Clone().Parent = OptionColorThemeVert2
+
+--
+
+local OptionLine = Instance.new("Frame", Option)
+OptionLine.Size = UDim2.new(0, 3*ClientX, 0, 140*ClientY)
+OptionLine.Position = UDim2.new(0, 271*ClientX, 0, 20*ClientY)
+OptionLine.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+
+AA:Clone().Parent = OptionLine
+
+local OptionTouche = Instance.new("Frame", Option)
+OptionTouche.Size = UDim2.new(0, 239*ClientX, 0, 140*ClientY)
+OptionTouche.Position = UDim2.new(0, 286*ClientX, 0, 20*ClientY)
+OptionTouche.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+
+A:Clone().Parent = OptionTouche
+
+local OptionTouche2 = Instance.new("Frame", OptionTouche)
+OptionTouche2.Size = UDim2.new(0, 235*ClientX, 0, 136*ClientY)
+OptionTouche2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+OptionTouche2.BackgroundColor3 = Color3.fromRGB(0,0,0)
+
+A:Clone().Parent = OptionTouche2
+
+local OptionBoelean = Instance.new("Frame", Option)
+OptionBoelean.Size = UDim2.new(0, 504*ClientX, 0, 140*ClientY)
+OptionBoelean.Position = UDim2.new(0, 20*ClientX, 0, 180*ClientY)
+OptionBoelean.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+
+A:Clone().Parent = OptionBoelean
+
+local OptionBoelean2 = Instance.new("Frame", OptionBoelean)
+OptionBoelean2.Size = UDim2.new(0, 500*ClientX, 0, 136*ClientY)
+OptionBoelean2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+OptionBoelean2.BackgroundColor3 = Color3.fromRGB(0,0,0)
+
+A:Clone().Parent = OptionBoelean2
+
+-- option categori 3
+local OptionBoeleanScrollingFrame = Instance.new('ScrollingFrame', OptionBoelean2)
+OptionBoeleanScrollingFrame.Size = UDim2.new(0, 490*ClientX, 0, 126*ClientY)
+OptionBoeleanScrollingFrame.Position = UDim2.new(0, 5*ClientX, 0, 5*ClientY)
+OptionBoeleanScrollingFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
+OptionBoeleanScrollingFrame.ScrollBarThickness = 0
+OptionBoeleanScrollingFrame.CanvasSize = UDim2.new(0, 490*ClientX, 0, 200*ClientY)
+OptionBoeleanScrollingFrame.BorderColor3 = Color3.fromRGB(0,0,0)
+--
+local OptionNewInstanceCloneBoelean = Instance.new("Frame", OptionBoeleanScrollingFrame)
+OptionNewInstanceCloneBoelean.Size = UDim2.new(0, 480*ClientX, 0, 50*ClientY)
+OptionNewInstanceCloneBoelean.Position = UDim2.new(0, 5*ClientX, 0, 5*ClientY)
+OptionNewInstanceCloneBoelean.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
+
+A:Clone().Parent = OptionNewInstanceCloneBoelean
+
+local OptionNewInstanceCloneBoeleanText = Instance.new("TextLabel", OptionNewInstanceCloneBoelean)
+OptionNewInstanceCloneBoeleanText.Text = 'Animation'
+OptionNewInstanceCloneBoeleanText.Position = UDim2.new(0,10*ClientX,0,25*ClientY)
+OptionNewInstanceCloneBoeleanText.Font = Enum.Font.GothamBold
+OptionNewInstanceCloneBoeleanText.TextColor3 = Color3.fromRGB(255, 255, 255)
+OptionNewInstanceCloneBoeleanText.TextSize = 40.000*ClientY*ClientX/2
+OptionNewInstanceCloneBoeleanText.TextXAlignment = Enum.TextXAlignment.Left
+OptionNewInstanceCloneBoeleanText.BorderSizePixel = 0
+
+local OptionNewInstanceCloneBoeleanBolelean = Instance.new("Frame", OptionNewInstanceCloneBoelean)
+OptionNewInstanceCloneBoeleanBolelean.Size = UDim2.new(0, 80*ClientX, 0, 30*ClientY)
+OptionNewInstanceCloneBoeleanBolelean.Position = UDim2.new(0, 390*ClientX, 0.5, -15*ClientY)
+OptionNewInstanceCloneBoeleanBolelean.BackgroundColor3 = Color3.fromRGB(0,0,0)
+
+A:Clone().Parent = OptionNewInstanceCloneBoeleanBolelean
+
+OptionNewInstanceCloneBoeleanBoleleanbis = Instance.new("Frame", OptionNewInstanceCloneBoeleanBolelean)
+OptionNewInstanceCloneBoeleanBoleleanbis.Size = UDim2.new(0, 34*ClientX, 0, 24*ClientY)
+OptionNewInstanceCloneBoeleanBoleleanbis.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
+
+if _ConfigScript.AnimationBolean == false then
+    OptionNewInstanceCloneBoeleanBoleleanbis.Position = UDim2.new(0, 3*ClientX, 0.5, -12*ClientY)
+else
+    OptionNewInstanceCloneBoeleanBoleleanbis.Position = UDim2.new(0, 43*ClientX, 0.5, -12*ClientY)
+end
+
+A:Clone().Parent = OptionNewInstanceCloneBoeleanBoleleanbis
+
+OptionNewInstanceCloneBoeleanbis = Instance.new("Frame", OptionNewInstanceCloneBoelean)
+OptionNewInstanceCloneBoeleanbis.Transparency = 1
+OptionNewInstanceCloneBoeleanbis.Size = UDim2.new(0, 480*ClientX, 0, 50*ClientY)
+--
+local Credits = Instance.new("Frame", FirstGUI2)
+Credits.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
+Credits.BackgroundColor3 = Color3.fromRGB(255,0,255)
+Credits.Position = UDim2.new(0, 0, 0, 34*ClientY)
+Credits.Visible = false
+
+local Menu = Instance.new("Frame", FirstGUI2)
+Menu.BackgroundColor3 = Color3.new(1,1,1)
+Menu.Size = UDim2.new(0, 12*ClientX, 0, 340*ClientY)
+Menu.Position = UDim2.new(0,0,0,34*ClientY)
+Menu.Visible = false
+
+A:Clone().Parent = Menu
+
+local MenuBis = Instance.new("Frame", Menu)
+MenuBis.BackgroundColor3 = Color3.new(1,1,1)
+MenuBis.Size = UDim2.new(0, 0, 0, 340*ClientY)
+MenuBis.Position = UDim2.new(0, 6*ClientX, 0, 0)
+MenuBis.BorderSizePixel = 0
+
+local MenuBis2 = Instance.new("Frame", Menu)
+MenuBis2.BackgroundColor3 = Color3.new(1,1,1)
+MenuBis2.Size = UDim2.new(0, 12*ClientX, 0, 6*ClientY)
+MenuBis2.Position = UDim2.new(0, 0, 0, 0)
+MenuBis2.BorderSizePixel = 0
+
+local MenuHomeButton = Instance.new("Frame", MenuBis)
+MenuHomeButton.BackgroundColor3 = Color3.new(0,0,0)
+MenuHomeButton.Size = UDim2.new(0, 0, 0, 30*ClientY)
+MenuHomeButton.Position = UDim2.new(0.5, -131*ClientX, 0, 15*ClientY)
+MenuHomeButton.BorderSizePixel = 0
+
+local A1 = Instance.new("UICorner", MenuHomeButton)
+A1.CornerRadius = UDim.new(0.99)
+
+local MenuHomeButton2 = Instance.new("TextButton", MenuHomeButton)
+MenuHomeButton2.BackgroundColor3 = Color3.new(1,1,1)
+MenuHomeButton2.Size = UDim2.new(0, 0, 0, 26*ClientY)
+MenuHomeButton2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+MenuHomeButton2.BorderSizePixel = 0
+MenuHomeButton2.Text = "H O M E"
+MenuHomeButton2.TextColor3 = Color3.fromRGB(0,0,0)
+MenuHomeButton2.TextSize = 40.000*(ClientY*ClientX/2)
+MenuHomeButton2.Font = Enum.Font.GothamBold
+MenuHomeButton2.TextTransparency = 1
+
+local A2 = Instance.new("UICorner", MenuHomeButton2)
+A2.CornerRadius = UDim.new(0.99)
+
+local MenuKeyButton = Instance.new("Frame", MenuBis)
+MenuKeyButton.BackgroundColor3 = Color3.new(0,0,0)
+MenuKeyButton.Size = UDim2.new(0, 0, 0, 30*ClientY)
+MenuKeyButton.Position = UDim2.new(0.5, -131*ClientX, 0, 60*ClientY)
+MenuKeyButton.BorderSizePixel = 0
+
+A1 = Instance.new("UICorner", MenuKeyButton)
+A1.CornerRadius = UDim.new(0.99)
+
+local MenuKeyButton2 = Instance.new("TextButton", MenuKeyButton)
+MenuKeyButton2.BackgroundColor3 = Color3.new(1,1,1)
+MenuKeyButton2.Size = UDim2.new(0, 0, 0, 26*ClientY)
+MenuKeyButton2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+MenuKeyButton2.BorderSizePixel = 0
+MenuKeyButton2.Text = "K E Y"
+MenuKeyButton2.TextColor3 = Color3.fromRGB(0,0,0)
+MenuKeyButton2.TextSize = 40.000*(ClientY*ClientX/2)
+MenuKeyButton2.Font = Enum.Font.GothamBold
+MenuKeyButton2.TextTransparency = 1
+
+A2 = Instance.new("UICorner", MenuKeyButton2)
+A2.CornerRadius = UDim.new(0.99)
+
+local MenuScriptButton = Instance.new("Frame", MenuBis)
+MenuScriptButton.BackgroundColor3 = Color3.new(0,0,0)
+MenuScriptButton.Size = UDim2.new(0, 0, 0, 30*ClientY)
+MenuScriptButton.Position = UDim2.new(0.5, -131*ClientX, 0, 105*ClientY)
+MenuScriptButton.BorderSizePixel = 0
+
+A1 = Instance.new("UICorner", MenuScriptButton)
+A1.CornerRadius = UDim.new(0.99)
+
+
+local MenuScriptButton2 = Instance.new("TextButton", MenuScriptButton)
+MenuScriptButton2.BackgroundColor3 = Color3.new(1,1,1)
+MenuScriptButton2.Size = UDim2.new(0, 0, 0, 26*ClientY)
+MenuScriptButton2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+MenuScriptButton2.BorderSizePixel = 0
+MenuScriptButton2.Text = "S C R I P T"
+MenuScriptButton2.TextColor3 = Color3.fromRGB(0,0,0)
+MenuScriptButton2.TextSize = 40.000*(ClientY*ClientX/2)
+MenuScriptButton2.Font = Enum.Font.GothamBold
+MenuScriptButton2.TextTransparency = 1
+
+A2 = Instance.new("UICorner", MenuScriptButton2)
+A2.CornerRadius = UDim.new(0.99)
+
+local MenuCMDButton = Instance.new("Frame", MenuBis)
+MenuCMDButton.BackgroundColor3 = Color3.new(0,0,0)
+MenuCMDButton.Size = UDim2.new(0, 0, 0, 30*ClientY)
+MenuCMDButton.Position = UDim2.new(0.5, -131*ClientX, 0, 150*ClientY)
+MenuCMDButton.BorderSizePixel = 0
+
+A1 = Instance.new("UICorner", MenuCMDButton)
+A1.CornerRadius = UDim.new(0.99)
+
+
+local MenuCMDButton2 = Instance.new("TextButton", MenuCMDButton)
+MenuCMDButton2.BackgroundColor3 = Color3.new(1,1,1)
+MenuCMDButton2.Size = UDim2.new(0, 0, 0, 26*ClientY)
+MenuCMDButton2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+MenuCMDButton2.BorderSizePixel = 0
+MenuCMDButton2.Text = "C O M M A N D"
+MenuCMDButton2.TextColor3 = Color3.fromRGB(0,0,0)
+MenuCMDButton2.TextSize = 40.000*(ClientY*ClientX/2)
+MenuCMDButton2.Font = Enum.Font.GothamBold
+MenuCMDButton2.TextTransparency = 1
+
+A2 = Instance.new("UICorner", MenuCMDButton2)
+A2.CornerRadius = UDim.new(0.99)
+
+local MenuOptionButton = Instance.new("Frame", MenuBis)
+MenuOptionButton.BackgroundColor3 = Color3.new(0,0,0)
+MenuOptionButton.Size = UDim2.new(0, 0, 0, 30*ClientY)
+MenuOptionButton.Position = UDim2.new(0.5, -131*ClientX, 0, 195*ClientY)
+MenuOptionButton.BorderSizePixel = 0
+
+A1 = Instance.new("UICorner", MenuOptionButton)
+A1.CornerRadius = UDim.new(0.99)
+
+
+local MenuOptionButton2 = Instance.new("TextButton", MenuOptionButton)
+MenuOptionButton2.BackgroundColor3 = Color3.new(1,1,1)
+MenuOptionButton2.Size = UDim2.new(0, 0, 0, 26*ClientY)
+MenuOptionButton2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+MenuOptionButton2.BorderSizePixel = 0
+MenuOptionButton2.Text = "O P T I O N"
+MenuOptionButton2.TextColor3 = Color3.fromRGB(0,0,0)
+MenuOptionButton2.TextSize = 40.000*(ClientY*ClientX/2)
+MenuOptionButton2.Font = Enum.Font.GothamBold
+MenuOptionButton2.TextTransparency = 1
+
+A2 = Instance.new("UICorner", MenuOptionButton2)
+A2.CornerRadius = UDim.new(0.99)
+
+local MenuCreditsButton = Instance.new("Frame", MenuBis)
+MenuCreditsButton.BackgroundColor3 = Color3.new(0,0,0)
+MenuCreditsButton.Size = UDim2.new(0, 0, 0, 30*ClientY)
+MenuCreditsButton.Position = UDim2.new(0.5, -131*ClientX, 0, 240*ClientY)
+MenuCreditsButton.BorderSizePixel = 0
+
+A1 = Instance.new("UICorner", MenuCreditsButton)
+A1.CornerRadius = UDim.new(0.99)
+
+
+local MenuCreditsButton2 = Instance.new("TextButton", MenuCreditsButton)
+MenuCreditsButton2.BackgroundColor3 = Color3.new(1,1,1)
+MenuCreditsButton2.Size = UDim2.new(0, 0, 0, 26*ClientY)
+MenuCreditsButton2.Position = UDim2.new(0, 2*ClientX, 0, 2*ClientY)
+MenuCreditsButton2.BorderSizePixel = 0
+MenuCreditsButton2.Text = "C R E D I T S"
+MenuCreditsButton2.TextColor3 = Color3.fromRGB(0,0,0)
+MenuCreditsButton2.TextSize = 40.000*(ClientY*ClientX/2)
+MenuCreditsButton2.Font = Enum.Font.GothamBold
+MenuCreditsButton2.TextTransparency = 1
+
+ A2 = Instance.new("UICorner", MenuCreditsButton2)
+A2.CornerRadius = UDim.new(0.99)
+
+---------------------------------------------------------------------------
+local function AddHelpCommand(txt,_fggColor)
+    AllMessageConsol = AllMessageConsol + 1
+    CMDConsoleMessage = Instance.new("TextLabel", CMDScrollingFrame)
+    CMDConsoleMessage.BorderSizePixel = 0
+    CMDConsoleMessage.Position = UDim2.new(0, 0, 0, 20*AllMessageConsol*ClientY)
+	CMDConsoleMessage.BackgroundColor3 = Color3.fromRGB(0,0,0)
+    CMDConsoleMessage.Size = UDim2.new(0, 544*ClientX, 0, 20*ClientY)
+    CMDConsoleMessage.Font = Enum.Font.GothamBold
+    CMDConsoleMessage.Text = "  [ CMD ] "..txt
+    CMDConsoleMessage.TextScaled = true
+    CMDConsoleMessage.TextColor3 = Color3.fromRGB(46,255,234)
+    CMDConsoleMessage.TextXAlignment = Enum.TextXAlignment.Left
+    CMDScrollingFrame.CanvasSize = UDim2.new(0, 544*ClientX, 0, 20*(AllMessageConsol+1)*ClientY)
+end
+
+local function AddCommand(txt,_fggColor)
+    AllMessageConsol = AllMessageConsol + 1
+    CMDConsoleMessage = Instance.new("TextLabel", CMDScrollingFrame)
+    CMDConsoleMessage.BorderSizePixel = 0
+    CMDConsoleMessage.Position = UDim2.new(0, 0, 0, 20*AllMessageConsol*ClientY)
+	CMDConsoleMessage.BackgroundColor3 = Color3.fromRGB(0,0,0)
+    CMDConsoleMessage.Size = UDim2.new(0, 544*ClientX, 0, 20*ClientY)
+    CMDConsoleMessage.Font = Enum.Font.GothamBold
+    CMDConsoleMessage.Text = "  [ CMD ] "..txt
+    CMDConsoleMessage.TextScaled = true
+    CMDConsoleMessage.TextColor3 = Color3.fromRGB(255, 255, 255)
+    CMDConsoleMessage.TextXAlignment = Enum.TextXAlignment.Left
+    CMDScrollingFrame.CanvasSize = UDim2.new(0, 544*ClientX, 0, 20*(AllMessageConsol+1)*ClientY)
+end
+
+function Physique_gun()
+	local function sandbox(var,func)
+		local env = getfenv(func)
+		local newenv = setmetatable({},{
+			__index = function(self,k)
+				if k=="script" then
+					return var
+				else
+					return env[k]
+				end
+			end,
+		})
+		setfenv(func,newenv)
+		return func
+	end
+	local cors = {}
+	local mas = Instance.new("Model",game:GetService("Lighting"))
+	local Tool0 = Instance.new("Tool")
+	local Part1 = Instance.new("Part")
+	local CylinderMesh2 = Instance.new("CylinderMesh")
+	local Part3 = Instance.new("Part")
+	local LocalScript4 = Instance.new("LocalScript")
+	local Script5 = Instance.new("Script")
+	local LocalScript6 = Instance.new("LocalScript")
+	local Script7 = Instance.new("Script")
+	local LocalScript8 = Instance.new("LocalScript")
+	local Part9 = Instance.new("Part")
+	local Script10 = Instance.new("Script")
+	local Part11 = Instance.new("Part")
+	local Script12 = Instance.new("Script")
+	local Part13 = Instance.new("Part")
+	local Script14 = Instance.new("Script")
+	Tool0.Name = "Physics Gun"
+	Tool0.Parent = mas
+	Tool0.CanBeDropped = false
+	Part1.Name = "Handle"
+	Part1.Parent = Tool0
+	Part1.Material = Enum.Material.Neon
+	Part1.BrickColor = BrickColor.new("Cyan")
+	Part1.Transparency = 1
+	Part1.Rotation = Vector3.new(0, 15.4200001, 0)
+	Part1.CanCollide = false
+	Part1.FormFactor = Enum.FormFactor.Custom
+	Part1.Size = Vector3.new(1, 0.400000036, 0.300000012)
+	Part1.CFrame = CFrame.new(-55.2695465, 0.696546972, 0.383156985, 0.96399641, -4.98074878e-05, 0.265921414, 4.79998416e-05, 1, 1.32960558e-05, -0.265921414, -5.30653779e-08, 0.96399641)
+	Part1.BottomSurface = Enum.SurfaceType.Smooth
+	Part1.TopSurface = Enum.SurfaceType.Smooth
+	Part1.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part1.Position = Vector3.new(-55.2695465, 0.696546972, 0.383156985)
+	Part1.Orientation = Vector3.new(0, 15.4200001, 0)
+	Part1.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	CylinderMesh2.Parent = Part1
+	CylinderMesh2.Scale = Vector3.new(0.100000001, 0.100000001, 0.100000001)
+	CylinderMesh2.Scale = Vector3.new(0.100000001, 0.100000001, 0.100000001)
+	Part3.Name = "Shoot"
+	Part3.Parent = Tool0
+	Part3.Material = Enum.Material.Neon
+	Part3.BrickColor = BrickColor.new("Cyan")
+	Part3.Reflectance = 0.30000001192093
+	Part3.Transparency = 1
+	Part3.Rotation = Vector3.new(90.9799957, 0.25999999, -91.409996)
+	Part3.CanCollide = false
+	Part3.FormFactor = Enum.FormFactor.Custom
+	Part3.Size = Vector3.new(0.200000003, 0.25, 0.310000032)
+	Part3.CFrame = CFrame.new(-54.7998123, 0.774299085, -0.757350147, -0.0245519895, 0.99968797, 0.00460194098, 0.0169109926, 0.00501798885, -0.999844491, -0.999555528, -0.0244703442, -0.0170289185)
+	Part3.BottomSurface = Enum.SurfaceType.Smooth
+	Part3.TopSurface = Enum.SurfaceType.Smooth
+	Part3.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part3.Position = Vector3.new(-54.7998123, 0.774299085, -0.757350147)
+	Part3.Orientation = Vector3.new(88.9899979, 164.87999, 73.4700012)
+	Part3.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	LocalScript4.Parent = Tool0
+	table.insert(cors,sandbox(LocalScript4,function()
+
+	local render = game:GetService("RunService").RenderStepped
+	local contextActionService = game:GetService("ContextActionService")
+	local userInputService = game:GetService("UserInputService")
+
+	local player = game.Players.LocalPlayer
+	local mouse = player:GetMouse()
+	local Tool = script.Parent
+
+	local screenSpace = require(Tool:WaitForChild("ScreenSpace"))
+
+	local connection
+
+	local neck, shoulder, oldNeckC0, oldShoulderC0 
+
+	local mobileShouldTrack = true
+
+	local function amISitting(character)
+		local t = character.Torso
+		for _, part in pairs(t:GetConnectedParts(true)) do
+			if part:IsA("Seat") or part:IsA("VehicleSeat") then
+				return true
+			end
+		end
+	end
+
+	local function frame(mousePosition)
+		if not mobileShouldTrack then return end
+		if player.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.Swimming then
+			local torso = player.Character.Torso
+			local head = player.Character.Head
+			
+			local toMouse = (mousePosition - head.Position).unit
+			local angle = math.acos(toMouse:Dot(Vector3.new(0,1,0)))
+			
+			local neckAngle = angle
+		
+			if math.deg(neckAngle) > 110 then
+				neckAngle = math.rad(110)
+			end
+			neck.C0 = CFrame.new(0,1,0) * CFrame.Angles(math.pi - neckAngle,math.pi,0)
+			
+			local arm = player.Character:FindFirstChild("Right Arm")
+			local fromArmPos = torso.Position + torso.CFrame:vectorToWorldSpace(Vector3.new(
+				torso.Size.X/2 + arm.Size.X/2, torso.Size.Y/2 - arm.Size.Z/2, 0))
+			local toMouseArm = ((mousePosition - fromArmPos) * Vector3.new(1,0,1)).unit
+			local look = (torso.CFrame.lookVector * Vector3.new(1,0,1)).unit
+			local lateralAngle = math.acos(toMouseArm:Dot(look))		
+			
+			if tostring(lateralAngle) == "-1.#IND" then
+				lateralAngle = 0
+			end		
+			
+			if player.Character.Humanoid:GetState() == Enum.HumanoidStateType.Seated then			
+				
+				local cross = torso.CFrame.lookVector:Cross(toMouseArm)
+				if lateralAngle > math.pi/2 then
+					lateralAngle = math.pi/2
+				end
+				if cross.Y < 0 then
+					lateralAngle = -lateralAngle
+				end
+			end	
+			
+			shoulder.C0 = CFrame.new(1,0.5,0) * CFrame.Angles(math.pi/2 - angle,math.pi/2 + lateralAngle,0)	
+			
+			if not amISitting(player.Character) then
+				torso.CFrame = CFrame.new(torso.Position, torso.Position + (Vector3.new(
+					mousePosition.X, torso.Position.Y, mousePosition.Z)-torso.Position).unit)
+			else
+				print("sitting")	
+			end	
+		end
+	end
+
+	local function pcFrame()
+		frame(mouse.Hit.p)
+	end
+
+	local function mobileFrame(touch, processed)
+		if not processed then
+			local test = screenSpace.ScreenToWorld(touch.Position.X, touch.Position.Y, 1)
+			local nearPos = game.Workspace.CurrentCamera.CoordinateFrame:vectorToWorldSpace(screenSpace.ScreenToWorld(touch.Position.X, touch.Position.Y, 1))
+			nearPos = game.Workspace.CurrentCamera.CoordinateFrame.p - nearPos
+			local farPos = screenSpace.ScreenToWorld(touch.Position.X, touch.Position.Y,50) 
+			farPos = game.Workspace.CurrentCamera.CoordinateFrame:vectorToWorldSpace(farPos) * -1
+			if farPos.magnitude > 900 then
+				farPos = farPos.unit * 900
+			end
+			local ray = Ray.new(nearPos, farPos)
+			local part, pos = game.Workspace:FindPartOnRay(ray, player.Character)
+			
+			if pos then
+				frame(pos)
+			end
+		end
+	end
+
+	local oldIcon = nil
+	local function equip()
+		local torso = player.Character.Torso
+		
+		neck = torso.Neck	
+		oldNeckC0 = neck.C0
+		shoulder = torso:FindFirstChild("Right Shoulder")
+		oldShoulderC0 = shoulder.C0
+		
+		oldIcon = mouse.Icon
+		mouse.Icon = "rbxassetid:// 2184939409"
+		
+		if userInputService.TouchEnabled then
+			connection = userInputService.TouchMoved:connect(mobileFrame)
+		else
+			connection = render:connect(pcFrame)
+		end
+		
+		userInputService.TouchStarted:connect(function(touch, processed)
+			mobileShouldTrack = not processed
+		end)	
+		userInputService.TouchEnded:connect(function(touch, processed)
+			mobileShouldTrack = false
+		end)
+		
+		game.ReplicatedStorage.ROBLOX_PistolEquipEvent:FireServer()
+		
+		mouse.Button1Down:connect(function()
+			game.ReplicatedStorage.ROBLOX_PistolFireEvent:FireServer(mouse.Hit.p)
+		end)
+		
+		contextActionService:BindActionToInputTypes("Reload", function() 
+			game.ReplicatedStorage.ROBLOX_PistolReloadEvent:FireServer()		
+		end, true, "")
+		
+		if workspace.FilteringEnabled then
+			while connection do
+				wait()
+				game.ReplicatedStorage.ROBLOX_PistolUpdateEvent:FireServer(neck.C0, shoulder.C0)
+			end
+		end
+	end
+
+	local function unequip()
+		if connection then connection:disconnect() end
+		contextActionService:UnbindAction("Reload")
+		game.ReplicatedStorage.ROBLOX_PistolUnequipEvent:FireServer()
+		mouse.Icon = oldIcon
+		neck.C0 = oldNeckC0
+		shoulder.C0 = oldShoulderC0
+	end
+
+	Tool.Equipped:connect(equip)
+	Tool.Unequipped:connect(unequip)
+	end))
+	Script5.Name = "qPerfectionWeld"
+	Script5.Parent = Tool0
+	table.insert(cors,sandbox(Script5,function()
+
+	local NEVER_BREAK_JOINTS = false
+
+
+	local function CallOnChildren(Instance, FunctionToCall) 
+
+		FunctionToCall(Instance)
+
+		for _, Child in next, Instance:GetChildren() do
+			CallOnChildren(Child, FunctionToCall)
+		end
+	end
+
+	local function GetNearestParent(Instance, ClassName)
+
+		local Ancestor = Instance
+		repeat
+			Ancestor = Ancestor.Parent
+			if Ancestor == nil then
+				return nil
+			end
+		until Ancestor:IsA(ClassName)
+
+		return Ancestor
+	end
+
+	local function GetBricks(StartInstance)
+		local List = {}
+
+		CallOnChildren(StartInstance, function(Item)
+			if Item:IsA("BasePart") then
+				List[#List+1] = Item;
+			end
+		end)
+
+		return List
+	end
+
+	local function Modify(Instance, Values)
+
+		assert(type(Values) == "table", "Values is not a table");
+
+		for Index, Value in next, Values do
+			if type(Index) == "number" then
+				Value.Parent = Instance
+			else
+				Instance[Index] = Value
+			end
+		end
+		return Instance
+	end
+
+	local function Make(ClassType, Properties) 
+
+		return Modify(Instance.new(ClassType), Properties)
+	end
+
+	local Surfaces = {"TopSurface", "BottomSurface", "LeftSurface", "RightSurface", "FrontSurface", "BackSurface"}
+	local HingSurfaces = {"Hinge", "Motor", "SteppingMotor"}
+
+	local function HasWheelJoint(Part)
+		for _, SurfaceName in pairs(Surfaces) do
+			for _, HingSurfaceName in pairs(HingSurfaces) do
+				if Part[SurfaceName].Name == HingSurfaceName then
+					return true
+				end
+			end
+		end
+		
+		return false
+	end
+
+	local function ShouldBreakJoints(Part)
+
+		if NEVER_BREAK_JOINTS then
+			return false
+		end
+		
+		if HasWheelJoint(Part) then
+			return false
+		end
+		
+		local Connected = Part:GetConnectedParts()
+		
+		if #Connected == 1 then
+			return false
+		end
+		
+		for _, Item in pairs(Connected) do
+			if HasWheelJoint(Item) then
+				return false
+			elseif not Item:IsDescendantOf(script.Parent) then
+				return false
+			end
+		end
+		
+		return true
+	end
+
+	local function WeldTogether(Part0, Part1, JointType, WeldParent)
+
+		JointType = JointType or "Weld"
+		local RelativeValue = Part1:FindFirstChild("qRelativeCFrameWeldValue")
+		
+		local NewWeld = Part1:FindFirstChild("qCFrameWeldThingy") or Instance.new(JointType)
+		Modify(NewWeld, {
+			Name = "qCFrameWeldThingy";
+			Part0  = Part0;
+			Part1  = Part1;
+			C0     = CFrame.new();Part0.CFrame:inverse();
+			C1     = RelativeValue and RelativeValue.Value or Part1.CFrame:toObjectSpace(Part0.CFrame); Part1.CFrame:inverse() * Part0.CFrame; Part1.CFrame:inverse();
+			Parent = Part1;
+		})
+
+		if not RelativeValue then
+			RelativeValue = Make("CFrameValue", {
+				Parent     = Part1;
+				Name       = "qRelativeCFrameWeldValue";
+				Archivable = true;
+				Value      = NewWeld.C1;
+			})
+		end
+
+		return NewWeld
+	end
+
+	local function WeldParts(Parts, MainPart, JointType, DoNotUnanchor)
+		
+		for _, Part in pairs(Parts) do
+			if ShouldBreakJoints(Part) then
+				Part:BreakJoints()
+			end
+		end
+		
+		for _, Part in pairs(Parts) do
+			if Part ~= MainPart then
+				WeldTogether(MainPart, Part, JointType, MainPart)
+			end
+		end
+
+		if not DoNotUnanchor then
+			for _, Part in pairs(Parts) do
+				Part.Anchored = false
+			end
+			MainPart.Anchored = false
+		end
+	end
+
+	local function PerfectionWeld()	
+		local Tool = GetNearestParent(script, "Tool")
+
+		local Parts = GetBricks(script.Parent)
+		local PrimaryPart = Tool and Tool:FindFirstChild("Handle") and Tool.Handle:IsA("BasePart") and Tool.Handle or script.Parent:IsA("Model") and script.Parent.PrimaryPart or Parts[1]
+
+		if PrimaryPart then
+			WeldParts(Parts, PrimaryPart, "Weld", false)
+		else
+			warn("qWeld - Unable to weld part")
+		end
+		
+		return Tool
+	end
+
+	local Tool = PerfectionWeld()
+
+
+	if Tool and script.ClassName == "Script" then
+
+		script.Parent.AncestryChanged:connect(function()
+			PerfectionWeld()
+		end)
+	end
+
+	end))
+	LocalScript6.Name = "Animate"
+	LocalScript6.Parent = Tool0
+	table.insert(cors,sandbox(LocalScript6,function()
+	local arms = nil
+	local torso = nil
+	local welds = {}
+	local Tool = script.Parent
+	local neck = nil
+	local orginalC0 = CFrame.new(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+
+	function Equip(mouse)
+	wait(0.01)
+	arms = {Tool.Parent:FindFirstChild("Left Arm"), Tool.Parent:FindFirstChild("Right Arm")}
+	local head = Tool.Parent:FindFirstChild("Head") 
+	torso = Tool.Parent:FindFirstChild("Torso")
+	if neck == nil then 
+	neck = Tool.Parent:FindFirstChild("Torso").Neck
+	end 
+	if arms ~= nil and torso ~= nil then
+	local sh = {torso:FindFirstChild("Left Shoulder"), torso:FindFirstChild("Right Shoulder")}
+	if sh ~= nil then
+	local yes = true
+	if yes then
+	yes = false
+	sh[1].Part1 = nil
+	sh[2].Part1 = nil
+	local weld1 = Instance.new("Weld")
+	weld1.Part0 = head
+	weld1.Parent = head
+	weld1.Part1 = arms[1]
+	welds[1] = weld1
+	local weld2 = Instance.new("Weld")
+	weld2.Part0 = head
+	weld2.Parent = head
+	weld2.Part1 = arms[2]
+	welds[2] = weld2
+	weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+	weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+		mouse.Move:connect(function ()
+			local Direction = mouse.Hit.p
+			local b = head.Position.Y-Direction.Y
+			local dist = (head.Position-Direction).magnitude
+			local answer = math.asin(b/dist)
+			neck.C0=orginalC0*CFrame.fromEulerAnglesXYZ(answer,0,0)
+			wait(0.1)
+		end)end
+	else
+	print("sh")
+	end
+	else
+	print("arms")
+	end
+	end
+
+	function Unequip(mouse)
+	if arms ~= nil and torso ~= nil then
+	local sh = {torso:FindFirstChild("Left Shoulder"), torso:FindFirstChild("Right Shoulder")}
+	if sh ~= nil then
+	local yes = true
+	if yes then
+	yes = false
+		neck.C0 = orginalC0
+
+	sh[1].Part1 = arms[1]
+	sh[2].Part1 = arms[2]
+	welds[1].Parent = nil
+	welds[2].Parent = nil
+	end
+	else
+	print("sh")
+	end
+	else
+	print("arms")
+	end
+	end
+	Tool.Equipped:connect(Equip)
+	Tool.Unequipped:connect(Unequip)
+
+	function Animate()
+	arms = {Tool.Parent:FindFirstChild("Left Arm"), Tool.Parent:FindFirstChild("Right Arm")}
+		if Tool.AnimateValue.Value == "Shoot" then 
+			local weld1 = welds[1]
+			local weld2 = welds[2]
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+			wait(0.00001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.05, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+			wait(0.00001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.1, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-95), math.rad(-15), 0)
+			wait(0.00001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.3, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-110), math.rad(-15), 0)
+			wait(0.00001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.35, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-115), math.rad(-15), 0)
+			wait(0.00001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+			wait(0.00001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)	
+			Tool.AnimateValue.Value = "None"
+		end 
+		if Tool.AnimateValue.Value == "Reload" then 
+			local weld1 = welds[1]
+			local weld2 = welds[2]
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-95), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-100), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-105), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-110), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.4, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-115), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.45, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.9, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.5, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 1, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.55, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 1.1, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.57, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 1.2, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.6, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 1.3, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0.6, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-120), math.rad(-15), 0)
+			wait(0.0001)
+			weld1.C1 = CFrame.new(-0.5+1.5, 0.8, .9)* CFrame.fromEulerAnglesXYZ(math.rad(290), 0, math.rad(-90))
+			weld2.C1 = CFrame.new(-1, 0.8, 0.5-1.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(-15), 0)	
+			Tool.AnimateValue.Value = "None"
+		end 
+	end 
+
+	Tool.AnimateValue.Changed:connect(Animate)
+
+	end))
+	Script7.Name = "LineConnect"
+	Script7.Parent = Tool0
+	Script7.Disabled = true
+	table.insert(cors,sandbox(Script7,function()
+	wait()
+	local check = script.Part2
+	local part1 = script.Part1.Value
+	local part2 = script.Part2.Value
+	local parent = script.Par.Value
+	local color = script.Color
+	local line = Instance.new("Part")
+	line.TopSurface = 0
+	line.BottomSurface = 0
+	line.Reflectance = .5
+	line.Name = "Laser"
+	line.Transparency = 0.6
+	line.Locked = true
+	line.CanCollide = false
+	line.Anchored = true
+	line.formFactor = 0
+	line.Size = Vector3.new(0.4,0.4,1)
+	local mesh = Instance.new("BlockMesh")
+	mesh.Parent = line
+	while true do
+		if (check.Value==nil) then break end
+		if (part1==nil or part2==nil or parent==nil) then break end
+		if (part1.Parent==nil or part2.Parent==nil) then break end
+		if (parent.Parent==nil) then break end
+		local lv = CFrame.new(part1.Position,part2.Position)
+		local dist = (part1.Position-part2.Position).magnitude
+		line.Parent = parent
+		line.Material = "Neon"
+		line.BrickColor = color.Value.BrickColor
+		line.Reflectance = color.Value.Reflectance
+		line.Transparency = "0.2"
+		line.CFrame = CFrame.new(part1.Position+lv.lookVector*dist/2)
+		line.CFrame = CFrame.new(line.Position,part2.Position)
+		mesh.Scale = Vector3.new(.25,.25,dist)
+		wait()
+	end
+	line:remove()
+	script:remove() 
+	end))
+	LocalScript8.Name = "MainScript"
+	LocalScript8.Parent = Tool0
+	table.insert(cors,sandbox(LocalScript8,function()
+	wait() 
+	tool = script.Parent
+	lineconnect = tool.LineConnect
+	object = nil
+	mousedown = false
+	found = false
+	BP = Instance.new("BodyPosition")
+	BP.maxForce = Vector3.new(math.huge*math.huge,math.huge*math.huge,math.huge*math.huge) --pwns everyone elses bodyposition
+	BP.P = BP.P*10
+	dist = nil
+	point = Instance.new("Part")
+	point.Locked = true
+	point.Anchored = true
+	point.formFactor = 0
+	point.Shape = 0
+	point.Material = 'Neon'
+	point.BrickColor = BrickColor.new("Toothpaste")
+	point.Size = Vector3.new(1,1,1)
+	point.CanCollide = false
+	local mesh = Instance.new("SpecialMesh")
+	mesh.MeshType = "Sphere"
+	mesh.Scale = Vector3.new(.2,.2,.2)
+	mesh.Parent = point
+	handle = tool.Shoot
+	front = tool.Shoot
+	color = tool.Shoot
+	objval = nil
+	local hooked = false 
+	local hookBP = BP:clone() 
+	hookBP.maxForce = Vector3.new(30000,30000,30000) 
+
+	function LineConnect(part1,part2,parent)
+		local p1 = Instance.new("ObjectValue")
+		p1.Value = part1
+		p1.Name = "Part1"
+		local p2 = Instance.new("ObjectValue")
+		p2.Value = part2
+		p2.Name = "Part2"
+		local par = Instance.new("ObjectValue")
+		par.Value = parent
+		par.Name = "Par"
+		local col = Instance.new("ObjectValue")
+		col.Value = color
+		col.Name = "Color"
+		local s = lineconnect:clone()
+		s.Disabled = false
+		p1.Parent = s
+		p2.Parent = s
+		par.Parent = s
+		col.Parent = s
+		s.Parent = workspace
+		if (part2==object) then
+			objval = p2
+		end
+	end
+
+	function onButton1Down(mouse)
+		if (mousedown==true) then return end
+		mousedown = true
+		coroutine.resume(coroutine.create(function()
+			local p = point:clone()
+			p.Parent = tool
+			LineConnect(front,p,workspace)
+			while (mousedown==true) do
+				p.Parent = tool
+				if (object==nil) then
+					if (mouse.Target==nil) then
+						local lv = CFrame.new(front.Position,mouse.Hit.p)
+						p.CFrame = CFrame.new(front.Position+(lv.lookVector*1000))
+					else
+						p.CFrame = CFrame.new(mouse.Hit.p)
+					end
+				else
+					LineConnect(front,object,workspace)
+					break
+				end
+				wait()
+			end
+			p:remove()
+		end))
+		while (mousedown==true) do
+			if (mouse.Target~=nil) then
+				local t = mouse.Target
+				if (t.Anchored==false) then
+					object = t
+					dist = (object.Position-front.Position).magnitude
+					break
+				end
+			end
+			wait()
+		end
+		while (mousedown==true) do
+			if (object.Parent==nil) then break end
+			local lv = CFrame.new(front.Position,mouse.Hit.p)
+			BP.Parent = object
+			BP.position = front.Position+lv.lookVector*dist
+			wait()
+		end
+		BP:remove()
+		object = nil
+		objval.Value = nil
+	end
+
+	function onKeyDown(key,mouse) 
+		local key = key:lower() 
+		local yesh = false 
+		if (key=="q") then 
+			if (dist>=5) then 
+				dist = dist-5 
+			end 
+		end 
+		if key == "t" then 
+		if (object==nil) then return end 
+		for _,v in pairs(object:children()) do 
+		if v.className == "BodyGyro" then 
+		return nil 
+		end 
+		end 
+		BG = Instance.new("BodyGyro") 
+		BG.maxTorque = Vector3.new(math.huge,math.huge,math.huge) 
+		BG.cframe = CFrame.new(object.CFrame.p) 
+		BG.Parent = object 
+		repeat wait() until(object.CFrame == CFrame.new(object.CFrame.p)) 
+		BG.Parent = nil 
+		if (object==nil) then return end 
+		for _,v in pairs(object:children()) do 
+		if v.className == "BodyGyro" then 
+		v.Parent = nil 
+		end 
+		end 
+		object.Velocity = Vector3.new(0,0,0) 
+		object.RotVelocity = Vector3.new(0,0,0) 
+		end 
+		if (key=="e") then
+			dist = dist+5
+		end
+		if (string.byte(key)==27) then 
+			if (object==nil) then return end
+			local e = Instance.new("Explosion")
+			e.Parent = workspace
+			e.Position = object.Position
+			color.BrickColor = BrickColor.Black()
+			point.BrickColor = BrickColor.White() 
+			wait(.48)
+			color.BrickColor = BrickColor.White() 
+			point.BrickColor = BrickColor.Black() 
+		end
+		if (key=="") then 
+			if not hooked then 
+			if (object==nil) then return end 
+			hooked = true 
+			hookBP.position = object.Position 
+			if tool.Parent:findFirstChild("Torso") then 
+			hookBP.Parent = tool.Parent.Torso 
+			if dist ~= (object.Size.x+object.Size.y+object.Size.z)+5 then 
+			dist = (object.Size.x+object.Size.y+object.Size.z)+5 
+			end 
+			end 
+			else 
+			hooked = false 
+			hookBP.Parent = nil 
+			end 
+		end 
+		if (key=="r") then 
+			if (object==nil) then return end 
+			color.BrickColor = BrickColor.new("Toothpaste") 
+			point.BrickColor = BrickColor.new("Toothpaste") 
+			object.Parent = nil 
+			wait(.48) 
+			color.BrickColor = BrickColor.new("Toothpaste")
+			point.BrickColor = BrickColor.new("Toothpaste")
+		end 
+		if (key=="x") then 
+		if (object==nil) then return end 
+		local New = object:clone() 
+		New.Parent = object.Parent 
+		for _,v in pairs(New:children()) do 
+		if v.className == "BodyPosition" or v.className == "BodyGyro" then 
+		v.Parent = nil 
+		end 
+		end 
+		object = New 
+		mousedown = false 
+		mousedown = true 
+		LineConnect(front,object,workspace) 
+			while (mousedown==true) do
+			if (object.Parent==nil) then break end
+			local lv = CFrame.new(front.Position,mouse.Hit.p)
+			BP.Parent = object
+			BP.position = front.Position+lv.lookVector*dist
+			wait()
+		end
+		BP:remove()
+		object = nil
+		objval.Value = nil
+		end 
+		if (key=="c") then 
+			local Cube = Instance.new("Part") 
+			Cube.Locked = true 
+			Cube.Size = Vector3.new(4,4,4) 
+			Cube.formFactor = 0 
+			Cube.TopSurface = 0 
+			Cube.BottomSurface = 0 
+			Cube.Name = "WeightedStorageCube" 
+			Cube.Parent = workspace 
+			Cube.CFrame = CFrame.new(mouse.Hit.p) + Vector3.new(0,2,0) 
+			for i = 0,5 do 
+				local Decal = Instance.new("Decal") 
+				Decal.Texture = "http://www.roblox.com/asset/?id=2662260" 
+				Decal.Face = i 
+				Decal.Name = "WeightedStorageCubeDecal" 
+				Decal.Parent = Cube 
+			end 
+		end 
+		if (key=="") then 
+			if dist ~= 15 then 
+				dist = 15 
+			end 
+		end 
+	end
+
+	function onEquipped(mouse)
+		keymouse = mouse
+		local char = tool.Parent
+		human = char.Humanoid
+		human.Changed:connect(function() if (human.Health==0) then mousedown = false BP:remove() point:remove() tool:remove() end end)
+		mouse.Button1Down:connect(function() onButton1Down(mouse) end)
+		mouse.Button1Up:connect(function() mousedown = false end)
+		mouse.KeyDown:connect(function(key) onKeyDown(key,mouse) end)
+		mouse.Icon = "rbxassetid://2184939409"
+	end
+
+	tool.Equipped:connect(onEquipped)
+	end))
+	Part9.Name = "GlowPart"
+	Part9.Parent = Tool0
+	Part9.Material = Enum.Material.Neon
+	Part9.BrickColor = BrickColor.new("Cyan")
+	Part9.Transparency = 0.5
+	Part9.Rotation = Vector3.new(0, -89.5899963, 0)
+	Part9.Shape = Enum.PartType.Cylinder
+	Part9.Size = Vector3.new(1.20000005, 0.649999976, 2)
+	Part9.CFrame = CFrame.new(-54.8191681, 0.773548007, -0.0522949994, 0.00736002205, 4.68389771e-11, -0.999974668, 4.72937245e-11, 1, 1.41590961e-10, 0.999974668, 5.09317033e-11, 0.00736002252)
+	Part9.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part9.Position = Vector3.new(-54.8191681, 0.773548007, -0.0522949994)
+	Part9.Orientation = Vector3.new(0, -89.5799942, 0)
+	Part9.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Script10.Name = "Glow Script"
+	Script10.Parent = Part9
+	table.insert(cors,sandbox(Script10,function()
+	while true do
+	wait(0.05)
+	script.Parent.Transparency = .5
+	wait(0.05)
+	script.Parent.Transparency = .6
+	wait(0.05)
+	script.Parent.Transparency = .7
+	wait(0.05)
+	script.Parent.Transparency = .8
+	wait(0.05)
+	script.Parent.Transparency = .9
+	wait(0.05)
+	script.Parent.Transparency = .8
+	wait(0.05)
+	script.Parent.Transparency = .7
+	wait(0.05)
+	script.Parent.Transparency = .6
+	wait(0.05)
+	script.Parent.Transparency = .5
+	end
+
+	end))
+	Part11.Name = "GlowPart"
+	Part11.Parent = Tool0
+	Part11.Material = Enum.Material.Neon
+	Part11.BrickColor = BrickColor.new("Cyan")
+	Part11.Transparency = 0.5
+	Part11.Rotation = Vector3.new(-89.3799973, -55.7399979, -89.25)
+	Part11.Size = Vector3.new(0.280000001, 0.25999999, 0.200000003)
+	Part11.CFrame = CFrame.new(-54.9808807, 0.99843204, 0.799362957, 0.00736002205, 0.562958956, -0.826454222, 4.72937245e-11, 0.826475084, 0.56297338, 0.999974668, -0.00414349511, 0.00608287565)
+	Part11.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part11.Position = Vector3.new(-54.9808807, 0.99843204, 0.799362957)
+	Part11.Orientation = Vector3.new(-34.2599983, -89.5799942, 0)
+	Part11.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Script12.Name = "Glow Script"
+	Script12.Parent = Part11
+	table.insert(cors,sandbox(Script12,function()
+	while true do
+	wait(0.05)
+	script.Parent.Transparency = .5
+	wait(0.05)
+	script.Parent.Transparency = .6
+	wait(0.05)
+	script.Parent.Transparency = .7
+	wait(0.05)
+	script.Parent.Transparency = .8
+	wait(0.05)
+	script.Parent.Transparency = .9
+	wait(0.05)
+	script.Parent.Transparency = .8
+	wait(0.05)
+	script.Parent.Transparency = .7
+	wait(0.05)
+	script.Parent.Transparency = .6
+	wait(0.05)
+	script.Parent.Transparency = .5
+	end
+
+	end))
+	Part13.Name = "GlowPart"
+	Part13.Parent = Tool0
+	Part13.Material = Enum.Material.Neon
+	Part13.BrickColor = BrickColor.new("Cyan")
+	Part13.Transparency = 0.5
+	Part13.Rotation = Vector3.new(95.1500015, -53.8199997, 98.0799942)
+	Part13.Size = Vector3.new(0.280000001, 0.25999999, 0.200000003)
+	Part13.CFrame = CFrame.new(-54.5909271, 0.978429973, 0.799362957, -0.0830051303, -0.584483683, -0.807150841, 0.0241250042, 0.808528602, -0.58796227, 0.996258855, -0.0682764053, -0.0530113392)
+	Part13.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Part13.Position = Vector3.new(-54.5909271, 0.978429973, 0.799362957)
+	Part13.Orientation = Vector3.new(36.0099983, -93.7599945, 1.70999992)
+	Part13.Color = Color3.new(0.0156863, 0.686275, 0.92549)
+	Script14.Name = "Glow Script"
+	Script14.Parent = Part13
+	table.insert(cors,sandbox(Script14,function()
+	while true do
+	wait(0.05)
+	script.Parent.Transparency = .5
+	wait(0.05)
+	script.Parent.Transparency = .6
+	wait(0.05)
+	script.Parent.Transparency = .7
+	wait(0.05)
+	script.Parent.Transparency = .8
+	wait(0.05)
+	script.Parent.Transparency = .9
+	wait(0.05)
+	script.Parent.Transparency = .8
+	wait(0.05)
+	script.Parent.Transparency = .7
+	wait(0.05)
+	script.Parent.Transparency = .6
+	wait(0.05)
+	script.Parent.Transparency = .5
+	end
+
+	end))
+	for i,v in pairs(mas:GetChildren()) do
+		v.Parent = game:GetService("Players").LocalPlayer.Backpack
+		pcall(function() v:MakeJoints() end)
+	end
+	mas:Destroy()
+	for i,v in pairs(cors) do
+		spawn(function()
+			pcall(v)
+		end)
+	end
+end
+
+function Discord()
+	setclipboard("https://discord.gg/MsV8zJrZKe")
+end
+
+local function CMDEnter()
+    print(CMDInsert.Text)
+    local TTEnter = CMDInsert.Text
+    if TTEnter == "Physics gun" then
+        AddCommand("Add physique gun")
+        Physique_gun()
+    elseif TTEnter == "Fly" then
+		Fly()
+    elseif TTEnter == "Help" then
+        AddHelpCommand("Hello I'm IA support.")
+        AddHelpCommand("These are the keywords I can answer, otherwise")
+        AddHelpCommand("I invite you to join the discord to solve")
+        AddHelpCommand("your problem.")
+        AddHelpCommand("Cmds, Commands, Discord")
+	elseif TTEnter == "Cmds" or TTEnter == "Commands"then
+		AddCommand("All commands are printed in consol \"F9\"")
+		print("Physics gun, Fly, Help, Cmds, Commands, Help, Discord")
+	elseif TTEnter == "Discord" then
+		Discord()
+		AddCommand("The link are in clipboard")
+    else
+        AllMessageConsol = AllMessageConsol + 1
+        CMDConsoleMessage = Instance.new("TextLabel", CMDScrollingFrame)
+        CMDConsoleMessage.BorderSizePixel = 0
+        CMDConsoleMessage.Position = UDim2.new(0, 0, 0, 20*AllMessageConsol*ClientY)
+        CMDConsoleMessage.Size = UDim2.new(0, 544*ClientX, 0, 20*ClientY)
+        CMDConsoleMessage.Font = Enum.Font.GothamBold
+        CMDConsoleMessage.Text = "  [ CMD ] \'"..CMDInsert.Text.."\' does not exist"      
+        CMDConsoleMessage.TextScaled = true
+        CMDConsoleMessage.TextColor3 = Color3.fromRGB(255, 127, 4)
+        CMDConsoleMessage.TextXAlignment = Enum.TextXAlignment.Left
+        CMDScrollingFrame.CanvasSize = UDim2.new(0, 544*ClientX, 0, 20*(AllMessageConsol+1)*ClientY)
+    end
+    CMDInsert.Text = ''
+end
+
+--[[]]--
+--[[conextion logique]]--
+--[[]]--
+
+MenuButton.InputBegan:connect(function(InputBegan)
+    if InputBegan.UserInputType == Enum.UserInputType.MouseButton1 then
+        if pp == true then
+            if p == true then
+                if _ConfigScript.AnimationBolean then
+                    pp = false
+                    p = false
+                    repeat
+                        MenuHomeButton2.TextTransparency, MenuKeyButton2.TextTransparency, MenuScriptButton2.TextTransparency, MenuCMDButton2.TextTransparency, MenuOptionButton2.TextTransparency, MenuCreditsButton2.TextTransparency = MenuCreditsButton2.TextTransparency + 0.2, MenuHomeButton2.TextTransparency + 0.2, MenuKeyButton2.TextTransparency + 0.2, MenuKeyButton2.TextTransparency + 0.2, MenuKeyButton2.TextTransparency + 0.2, MenuKeyButton2.TextTransparency + 0.2
+                        wait(0.1)
+                    until(MenuHomeButton2.TextTransparency >= 1)
+                    MenuHomeButton2:TweenSize(UDim2.new(0, 0*ClientX, 0, 26*ClientY))
+                    MenuKeyButton2:TweenSize(UDim2.new(0, 0*ClientX, 0, 26*ClientY))
+                    MenuScriptButton2:TweenSize(UDim2.new(0, 0*ClientX, 0, 26*ClientY))
+                    MenuCMDButton2:TweenSize(UDim2.new(0, 0*ClientX, 0, 26*ClientY))
+                    MenuOptionButton2:TweenSize(UDim2.new(0, 0*ClientX, 0, 26*ClientY))
+                    MenuCreditsButton2:TweenSize(UDim2.new(0, 0*ClientX, 0, 26*ClientY))
+                    wait(0.3)
+                    MenuHomeButton:TweenSize(UDim2.new(0, 0*ClientX, 0, 30*ClientY))
+                    MenuKeyButton:TweenSize(UDim2.new(0, 0*ClientX, 0, 30*ClientY))
+                    MenuScriptButton:TweenSize(UDim2.new(0, 0*ClientX, 0, 30*ClientY))
+                    MenuCMDButton:TweenSize(UDim2.new(0, 0*ClientX, 0, 30*ClientY))
+                    MenuOptionButton:TweenSize(UDim2.new(0, 0*ClientX, 0, 30*ClientY))
+                    MenuCreditsButton:TweenSize(UDim2.new(0, 0*ClientX, 0, 30*ClientY))
+                    wait(1)
+                    MenuBis:TweenSize(UDim2.new(0, 0*ClientX, 0, 340*ClientY))
+                    wait(0.9)
+                    MenuBis2.Size = UDim2.new(0, 0*ClientX, 0, 6*ClientY)
+                    Menu.Size = UDim2.new(0, 0*ClientX, 0, 340*ClientY)
+                    wait(0.1)
+                    Menu.Visible = false
+                    pp = true
+                else
+                    MenuHomeButton2.Size = UDim2.new(0, 0*ClientX, 0, 26*ClientY)
+                    MenuKeyButton2.Size = UDim2.new(0, 0*ClientX, 0, 26*ClientY)
+                    MenuScriptButton2.Size = UDim2.new(0, 0*ClientX, 0, 26*ClientY)
+                    MenuCMDButton2.Size = UDim2.new(0, 0*ClientX, 0, 26*ClientY)
+                    MenuOptionButton2.Size = UDim2.new(0, 0*ClientX, 0, 26*ClientY)
+                    MenuCreditsButton2.Size = UDim2.new(0, 0*ClientX, 0, 26*ClientY)
+                    MenuHomeButton.Size = UDim2.new(0, 0*ClientX, 0, 30*ClientY)
+                    MenuKeyButton.Size = UDim2.new(0, 0*ClientX, 0, 30*ClientY)
+                    MenuScriptButton.Size = UDim2.new(0, 0*ClientX, 0, 30*ClientY)
+                    MenuCMDButton.Size = UDim2.new(0, 0*ClientX, 0, 30*ClientY)
+                    MenuOptionButton.Size = UDim2.new(0, 0*ClientX, 0, 30*ClientY)
+                    MenuCreditsButton.Size = UDim2.new(0, 0*ClientX, 0, 30*ClientY)
+                    MenuBis.Size = UDim2.new(0, 0*ClientX, 0, 340*ClientY)
+                    MenuBis2.Size = UDim2.new(0, 0*ClientX, 0, 6*ClientY)
+                    Menu.Size = UDim2.new(0, 0*ClientX, 0, 340*ClientY)
+                    Menu.Visible = false
+                    MenuHomeButton2.TextTransparency, MenuKeyButton2.TextTransparency, MenuScriptButton2.TextTransparency, MenuCMDButton2.TextTransparency, MenuOptionButton2.TextTransparency, MenuCreditsButton2.TextTransparency = 1,1,1,1,1,1
+                    pp = true
+                    p = false
+                end
+            else
+                if _ConfigScript.AnimationBolean then
+                    pp = false
+                    p = true
+                    Menu.Visible = true
+                    MenuBis2.Size = UDim2.new(0, 12*ClientX, 0, 6*ClientY)
+                    Menu.Size = UDim2.new(0, 12*ClientX, 0, 340*ClientY)
+                    MenuBis:TweenSize(UDim2.new(0, 266*ClientX, 0, 340*ClientY))
+                    wait(1)
+                    MenuHomeButton:TweenSize(UDim2.new(0, 250*ClientX, 0, 30*ClientY))
+                    MenuKeyButton:TweenSize(UDim2.new(0, 250*ClientX, 0, 30*ClientY))
+                    MenuScriptButton:TweenSize(UDim2.new(0, 250*ClientX, 0, 30*ClientY))
+                    MenuCMDButton:TweenSize(UDim2.new(0, 250*ClientX, 0, 30*ClientY))
+                    MenuOptionButton:TweenSize(UDim2.new(0, 250*ClientX, 0, 30*ClientY))
+                    MenuCreditsButton:TweenSize(UDim2.new(0, 250*ClientX, 0, 30*ClientY))
+                    wait(0.3)
+                    MenuHomeButton2:TweenSize(UDim2.new(0, 246*ClientX, 0, 26*ClientY))
+                    MenuKeyButton2:TweenSize(UDim2.new(0, 246*ClientX, 0, 26*ClientY))
+                    MenuScriptButton2:TweenSize(UDim2.new(0, 246*ClientX, 0, 26*ClientY))
+                    MenuCMDButton2:TweenSize(UDim2.new(0, 246*ClientX, 0, 26*ClientY))
+                    MenuOptionButton2:TweenSize(UDim2.new(0, 246*ClientX, 0, 26*ClientY))
+                    MenuCreditsButton2:TweenSize(UDim2.new(0, 246*ClientX, 0, 26*ClientY))
+                    wait(1)
+                    repeat
+                        MenuHomeButton2.TextTransparency, MenuKeyButton2.TextTransparency, MenuScriptButton2.TextTransparency, MenuCMDButton2.TextTransparency, MenuOptionButton2.TextTransparency, MenuCreditsButton2.TextTransparency = MenuCreditsButton2.TextTransparency - 0.2, MenuHomeButton2.TextTransparency - 0.2, MenuKeyButton2.TextTransparency - 0.2, MenuKeyButton2.TextTransparency - 0.2, MenuKeyButton2.TextTransparency - 0.2, MenuKeyButton2.TextTransparency - 0.2
+                        wait(0.1)
+                    until(MenuHomeButton2.TextTransparency <= 0)
+                    pp = true
+                else
+                    MenuHomeButton2.Size = UDim2.new(0, 246*ClientX, 0, 26*ClientY)
+                    MenuKeyButton2.Size = UDim2.new(0, 246*ClientX, 0, 26*ClientY)
+                    MenuScriptButton2.Size = UDim2.new(0, 246*ClientX, 0, 26*ClientY)
+                    MenuCMDButton2.Size = UDim2.new(0, 246*ClientX, 0, 26*ClientY)
+                    MenuOptionButton2.Size = UDim2.new(0, 246*ClientX, 0, 26*ClientY)
+                    MenuCreditsButton2.Size = UDim2.new(0, 246*ClientX, 0, 26*ClientY)
+                    MenuHomeButton.Size = UDim2.new(0, 250*ClientX, 0, 30*ClientY)
+                    MenuKeyButton.Size = UDim2.new(0, 250*ClientX, 0, 30*ClientY)
+                    MenuScriptButton.Size = UDim2.new(0, 250*ClientX, 0, 30*ClientY)
+                    MenuCMDButton.Size = UDim2.new(0, 250*ClientX, 0, 30*ClientY)
+                    MenuOptionButton.Size = UDim2.new(0, 250*ClientX, 0, 30*ClientY)
+                    MenuCreditsButton.Size = UDim2.new(0, 250*ClientX, 0, 30*ClientY)
+                    MenuBis.Size = UDim2.new(0, 266*ClientX, 0, 340*ClientY)
+                    MenuBis2.Size = UDim2.new(0, 12*ClientX, 0, 6*ClientY)
+                    Menu.Size = UDim2.new(0, 12*ClientX, 0, 340*ClientY)
+                    Menu.Visible = true
+                    MenuHomeButton2.TextTransparency, MenuKeyButton2.TextTransparency, MenuScriptButton2.TextTransparency, MenuCMDButton2.TextTransparency, MenuOptionButton2.TextTransparency, MenuCreditsButton2.TextTransparency = 0,0,0,0,0,0
+                    pp = true
+                    p = true
+                end
+            end
+        end
+    end
+end)
+
+MenuHomeButton2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        Home.Visible = true
+        Key.Visible, Script.Visible, CMD.Visible, Option.Visible, Credits.Visible = false, false, false, false, false
+    end
+end)
+
+MenuKeyButton2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        Key.Visible = true
+        Home.Visible, Script.Visible, CMD.Visible, Option.Visible, Credits.Visible = false, false, false, false, false
+    end
+end)
+
+MenuScriptButton2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        Script.Visible = true
+        Home.Visible, Key.Visible, CMD.Visible, Option.Visible, Credits.Visible = false, false, false, false, false
+    end
+end)
+
+MenuCMDButton2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        CMD.Visible= true
+        Home.Visible, Key.Visible, Script.Visible, Option.Visible, Credits.Visible = false, false, false, false, false
+    end
+end)
+
+MenuOptionButton2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        Option.Visible = true
+        Home.Visible, Key.Visible, Script.Visible, CMD.Visible, Credits.Visible = false, false, false, false, false
+    end
+end)
+
+MenuCreditsButton2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        Credits.Visible = true
+        Home.Visible, Key.Visible, Script.Visible, CMD.Visible, Option.Visible = false, false, false, false, false
+    end
+end)
+
+CMDInsert.FocusLost:Connect(function(enterPressed)
+    if enterPressed then
+        CMDEnter()
+    end
+end)
+
+OptionNewInstanceCloneBoeleanbis.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        if _ConfigScript.AnimationBolean == false then
+            if OptionNewInstanceCloneBoeleanbisbis == false then
+                _ConfigScript.AnimationBolean = true
+                OptionNewInstanceCloneBoeleanbisbis = true
+                OptionNewInstanceCloneBoeleanBoleleanbis:TweenPosition(UDim2.new(0, 43*ClientX, 0.5, -12*ClientY))
+                wait(1)
+                OptionNewInstanceCloneBoeleanbisbis = false
+                lib.WriteConfig("Axiom_Script", _ConfigScript)
+            end
+        else
+            if OptionNewInstanceCloneBoeleanbisbis == false then
+                OptionNewInstanceCloneBoeleanBoleleanbis.Position = UDim2.new(0, 3*ClientX, 0.5, -12*ClientY)
+                _ConfigScript.AnimationBolean = false
+                lib.WriteConfig("Axiom_Script", _ConfigScript)
+            end
+        end
+    end
+end)
+
+-- option color 
+
+local function ColorThemeChoose(_fggColor)
+	for _, v in pairs(game:GetService("CoreGui").ScreenGui:GetDescendants()) do
+		local x = tostring(v)
+		if x == "Frame" or x == "ImageLabel" or x == "TextLabel" or x == "TextBox" or x == "ScrollingFrame" then
+			if v.BackgroundColor3 == Color3.new(0,0,0) or v.BackgroundColor3 == Color3.new(0.113725, 0.2, 0.329412) or v.BackgroundColor3 == Color3.new(1, 0, 0) then
+			    if _fggColor == "Bleu" then
+    				v.BackgroundColor3 = Color3.new(0.113725, 0.2, 0.329412)
+			    elseif _fggColor == "Rouge" then
+			        v.BackgroundColor3 = Color3.new(1, 0, 0)
+				elseif _fggColor == "Noir" then
+			        v.BackgroundColor3 = Color3.new(0, 0, 0)
+			    end
+		    elseif v.BackgroundColor3 == Color3.new(0.235294,0.235294,0.235294) or v.BackgroundColor3 == Color3.new(0.101961,0.243137,0.411765) or v.BackgroundColor3 == Color3.new(1, 0, 0) then
+				if _fggColor == "Bleu" then
+    				v.BackgroundColor3 = Color3.new(0.101961,0.243137,0.411765)
+			    elseif _fggColor == "Rouge" then
+			        v.BackgroundColor3 = Color3.new(1, 0, 0)
+				elseif _fggColor == "Noir" then
+			        v.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
+			    end
+			elseif v.BackgroundColor3 == Color3.new(0.117647,0.117647,0.117647) or v.BackgroundColor3 == Color3.new(0.105882,0.164704,0.290196) or v.BackgroundColor3 == Color3.new(1, 0, 0) then
+				if _fggColor == "Bleu" then
+    				v.BackgroundColor3 = Color3.new(0.105882,0.164704,0.290196)
+			    elseif _fggColor == "Rouge" then
+			        v.BackgroundColor3 = Color3.new(1, 0, 0)
+				elseif _fggColor == "Noir" then
+			        v.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
+			    end
+			end
+		end
+	end
+end
+
+OptionColorThemeBleu2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+	    local _fggColor = "Bleu"
+	    ColorThemeChoose(_fggColor)
+	end
+end)
+
+OptionColorThemeRouge2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+	    local _fggColor = "Rouge"
+	    ColorThemeChoose(_fggColor)
+	end
+end)
+
+OptionColorThemeNoir2.InputBegan:connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+	    local _fggColor = "Noir"
+	    ColorThemeChoose(_fggColor)
+	end
+end)
+
+---------------------------------------------------------------------------
+
+if _ConfigScript.AnimationBolean then
+    FirstGUI:TweenSize(UDim2.new(0, 550*ClientX, 0, 380*ClientY))
+    wait(1)
+    FirstGUI2:TweenSize(UDim2.new(0, 544*ClientX, 0, 374*ClientY))
+    wait(1)
+    repeat
+        Titre.Transparency = Titre.Transparency - 0.1
+        MenuButton.Transparency = MenuButton.Transparency - 0.1
+        FirstGUI3.Transparency = FirstGUI3.Transparency - 0.1
+        MenuButton.ImageTransparency = MenuButton.ImageTransparency - 0.1
+        wait(0.1)
+    until(Titre.TextTransparency <= 0)
+    Home.Visible = true
+else
+    FirstGUI.Size = UDim2.new(0, 550*ClientX, 0, 380*ClientY)
+    FirstGUI2.Size = UDim2.new(0, 544*ClientX, 0, 374*ClientY)
+    Titre.Transparency, MenuButton.Transparency, FirstGUI3.Transparency, MenuButton.ImageTransparency, Home.Visible = true,0,0,0,0
+end

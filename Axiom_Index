@@ -1,13 +1,14 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/OuiSom89/New-file-funciton/main/New-file-funciton.lua"))()
 
 if lib.IsConfig("Axiom_Script") == false then
-
-    local _ConfigScript = {
-        AnimationBolean = true;
-        hotkeyhide = "j"
+    
+	local _ConfigCMD = {
+		version = "1.1.0";
+		AnimationBolean = true;
+		hotkeyhide = "j"
     }
 
-    lib.WriteConfig("Axiom_Script", _ConfigScript)
+	lib.WriteConfig("Axiom_Script", AnimationBolean)
 end
 
 if lib.IsConfig("Axiom_Script_CMD") == false then
@@ -23,6 +24,8 @@ local _ConfigScript = lib.ReadConfig("Axiom_Script")
 local _ConfigCMD = lib.ReadConfig("Axiom_Script_CMD")
 
 ---------------------------------------------------------------------------
+
+local version = "1.1.0"
 
 local pp = true
 local p = false
@@ -138,11 +141,22 @@ TextBienvenu.BorderSizePixel = 0
 A = Instance.new("UICorner", UserImage)
 A.CornerRadius = UDim.new(0.99)
 
+local TextVersion = Instance.new("TextLabel", Home)
+TextVersion.Text = "Version : "..version
+TextVersion.Position = UDim2.new(0,10*ClientX,0,325*ClientY)
+TextVersion.Font = Enum.Font.GothamBold
+TextVersion.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextVersion.TextSize = 40.000*ClientY*ClientX/2
+TextVersion.TextXAlignment = Enum.TextXAlignment.Left
+TextVersion.BorderSizePixel = 0
+
 local Key = Instance.new("Frame", FirstGUI2)
 Key.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
-Key.BackgroundColor3 = Color3.fromRGB(255,255,0)
+Key.BackgroundColor3 = Color3.fromRGB(0,0,0)
 Key.Position = UDim2.new(0, 0, 0, 34*ClientY)
 Key.Visible = false
+
+A = Instance.new("UICorner", Key)
 
 local Script = Instance.new("Frame", FirstGUI2)
 Script.Size = UDim2.new(0, 544*ClientX, 0, 340*ClientY)
@@ -240,6 +254,7 @@ OptionColorScrollingFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
 OptionColorScrollingFrame.ScrollBarThickness = 5
 OptionColorScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 300*ClientY)
 OptionColorScrollingFrame.BorderColor3 = Color3.fromRGB(0,0,0)
+OptionColorScrollingFrame.BorderSizePixel = 0
 
 local OptionColorName = Instance.new("TextLabel", OptionColorScrollingFrame)
 OptionColorName.Text = 'Color theme'
@@ -277,40 +292,10 @@ A:Clone().Parent = OptionColorThemeBleu
 local OptionColorThemeBleu2 = Instance.new("TextButton", OptionColorThemeBleu)
 OptionColorThemeBleu2.Size = UDim2.new(0, 209*ClientX, 0, 24*ClientY)
 OptionColorThemeBleu2.Position = UDim2.new(0,3*ClientX,0,3*ClientY)
-OptionColorThemeBleu2.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+OptionColorThemeBleu2.BackgroundColor3 = Color3.new(0.113725, 0.2, 0.329412)
 OptionColorThemeBleu2.Text = ''
 
 A:Clone().Parent = OptionColorThemeBleu2
-
-local OptionColorThemeRouge = Instance.new("Frame", OptionColorScrollingFrame)
-OptionColorThemeRouge.Size = UDim2.new(0, 215*ClientX, 0, 30*ClientY)
-OptionColorThemeRouge.Position = UDim2.new(0,0,0,105*ClientY)
-OptionColorThemeRouge.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
-
-A:Clone().Parent = OptionColorThemeRouge
-
-local OptionColorThemeRouge2 = Instance.new("TextButton", OptionColorThemeRouge)
-OptionColorThemeRouge2.Size = UDim2.new(0, 209*ClientX, 0, 24*ClientY)
-OptionColorThemeRouge2.Position = UDim2.new(0,3*ClientX,0,3*ClientY)
-OptionColorThemeRouge2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-OptionColorThemeRouge2.Text = ''
-
-A:Clone().Parent = OptionColorThemeRouge2
-
-local OptionColorThemeVert = Instance.new("Frame", OptionColorScrollingFrame)
-OptionColorThemeVert.Size = UDim2.new(0, 215*ClientX, 0, 30*ClientY)
-OptionColorThemeVert.Position = UDim2.new(0,0,0,140*ClientY)
-OptionColorThemeVert.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
-
-A:Clone().Parent = OptionColorThemeVert
-
-local OptionColorThemeVert2 = Instance.new("TextButton", OptionColorThemeVert)
-OptionColorThemeVert2.Size = UDim2.new(0, 209*ClientX, 0, 24*ClientY)
-OptionColorThemeVert2.Position = UDim2.new(0,3*ClientX,0,3*ClientY)
-OptionColorThemeVert2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-OptionColorThemeVert2.Text = ''
-
-A:Clone().Parent = OptionColorThemeVert2
 
 --
 
@@ -357,6 +342,7 @@ OptionBoeleanScrollingFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
 OptionBoeleanScrollingFrame.ScrollBarThickness = 0
 OptionBoeleanScrollingFrame.CanvasSize = UDim2.new(0, 490*ClientX, 0, 200*ClientY)
 OptionBoeleanScrollingFrame.BorderColor3 = Color3.fromRGB(0,0,0)
+OptionBoeleanScrollingFrame.BorderSizePixel = 0
 --
 local OptionNewInstanceCloneBoelean = Instance.new("Frame", OptionBoeleanScrollingFrame)
 OptionNewInstanceCloneBoelean.Size = UDim2.new(0, 480*ClientX, 0, 50*ClientY)
@@ -1785,27 +1771,21 @@ local function ColorThemeChoose(_fggColor)
 	for _, v in pairs(game:GetService("CoreGui").ScreenGui:GetDescendants()) do
 		local x = tostring(v)
 		if x == "Frame" or x == "ImageLabel" or x == "TextLabel" or x == "TextBox" or x == "ScrollingFrame" then
-			if v.BackgroundColor3 == Color3.new(0,0,0) or v.BackgroundColor3 == Color3.new(0.113725, 0.2, 0.329412) or v.BackgroundColor3 == Color3.new(1, 0, 0) then
+			if v.BackgroundColor3 == Color3.new(0,0,0) or v.BackgroundColor3 == Color3.new(0.113725, 0.2, 0.329412) then
 			    if _fggColor == "Bleu" then
     				v.BackgroundColor3 = Color3.new(0.113725, 0.2, 0.329412)
-			    elseif _fggColor == "Rouge" then
-			        v.BackgroundColor3 = Color3.new(1, 0, 0)
 				elseif _fggColor == "Noir" then
 			        v.BackgroundColor3 = Color3.new(0, 0, 0)
 			    end
-		    elseif v.BackgroundColor3 == Color3.new(0.235294,0.235294,0.235294) or v.BackgroundColor3 == Color3.new(0.101961,0.243137,0.411765) or v.BackgroundColor3 == Color3.new(1, 0, 0) then
+		    elseif v.BackgroundColor3 == Color3.new(0.235294,0.235294,0.235294) or v.BackgroundColor3 == Color3.new(0.101961,0.243137,0.411765) then
 				if _fggColor == "Bleu" then
     				v.BackgroundColor3 = Color3.new(0.101961,0.243137,0.411765)
-			    elseif _fggColor == "Rouge" then
-			        v.BackgroundColor3 = Color3.new(1, 0, 0)
 				elseif _fggColor == "Noir" then
 			        v.BackgroundColor3 = Color3.new(0.235294,0.235294,0.235294)
 			    end
-			elseif v.BackgroundColor3 == Color3.new(0.117647,0.117647,0.117647) or v.BackgroundColor3 == Color3.new(0.105882,0.164704,0.290196) or v.BackgroundColor3 == Color3.new(1, 0, 0) then
+			elseif v.BackgroundColor3 == Color3.new(0.117647,0.117647,0.117647) or v.BackgroundColor3 == Color3.new(0.105882,0.164704,0.290196) then
 				if _fggColor == "Bleu" then
     				v.BackgroundColor3 = Color3.new(0.105882,0.164704,0.290196)
-			    elseif _fggColor == "Rouge" then
-			        v.BackgroundColor3 = Color3.new(1, 0, 0)
 				elseif _fggColor == "Noir" then
 			        v.BackgroundColor3 = Color3.new(0.117647,0.117647,0.117647)
 			    end
@@ -1817,13 +1797,6 @@ end
 OptionColorThemeBleu2.InputBegan:connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
 	    local _fggColor = "Bleu"
-	    ColorThemeChoose(_fggColor)
-	end
-end)
-
-OptionColorThemeRouge2.InputBegan:connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-	    local _fggColor = "Rouge"
 	    ColorThemeChoose(_fggColor)
 	end
 end)
